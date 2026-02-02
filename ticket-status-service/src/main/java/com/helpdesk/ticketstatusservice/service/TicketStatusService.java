@@ -60,6 +60,13 @@ public class TicketStatusService {
         return new StatusSummaryResponse(date, statusCounts, totalTickets);
     }
     
+    public List<StatusHistoryResponse> getAllTickets() {
+        List<TicketStatusHistory> allStatusHistory = statusHistoryRepository.findAll();
+        return allStatusHistory.stream()
+                .map(this::mapToResponse)
+                .collect(Collectors.toList());
+    }
+    
     private StatusHistoryResponse mapToResponse(TicketStatusHistory history) {
         StatusHistoryResponse response = new StatusHistoryResponse();
         response.setId(history.getId());

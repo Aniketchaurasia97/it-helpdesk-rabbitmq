@@ -35,4 +35,9 @@ public class TicketController {
     public List<TicketResponse> getTicketsByPriority(@PathVariable Priority priority) {
         return ticketService.getTicketsByPriority(priority);
     }
+    
+    @GetMapping("/getalltickets")
+    public List<TicketResponse> getAllTickets() {
+        return ticketService.getAllTickets();
+    }
 }

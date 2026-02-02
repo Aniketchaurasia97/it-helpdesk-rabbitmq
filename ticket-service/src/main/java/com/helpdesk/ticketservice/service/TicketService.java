@@ -65,6 +65,13 @@ public class TicketService {
                 .collect(Collectors.toList());
     }
     
+    public List<TicketResponse> getAllTickets() {
+        List<Ticket> tickets = ticketRepository.findAll();
+        return tickets.stream()
+                .map(this::mapToResponse)
+                .collect(Collectors.toList());
+    }
+    
     private TicketResponse mapToResponse(Ticket ticket) {
         TicketResponse response = new TicketResponse();
         response.setTicketId(ticket.getTicketId());

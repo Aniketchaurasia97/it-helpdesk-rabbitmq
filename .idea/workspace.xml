@@ -4,35 +4,55 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="347e3695-534d-4a2a-b755-bbd99cf34868" name="Changes" comment="" />
+    <list default="true" id="347e3695-534d-4a2a-b755-bbd99cf34868" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/src/main/java/com/helpdesk/ticketservice/controller/TicketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/helpdesk/ticketservice/controller/TicketController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-service/src/main/java/com/helpdesk/ticketservice/service/TicketService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-service/src/main/java/com/helpdesk/ticketservice/service/TicketService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-status-service/src/main/java/com/helpdesk/ticketstatusservice/controller/TicketStatusController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-status-service/src/main/java/com/helpdesk/ticketstatusservice/controller/TicketStatusController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket-status-service/src/main/java/com/helpdesk/ticketstatusservice/service/TicketStatusService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticket-status-service/src/main/java/com/helpdesk/ticketstatusservice/service/TicketStatusService.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="38qpgMShYT6q7jV41sGhACIlNHv" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Aniket Chaurasia/Desktop/it helpdesk microservice",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/it helpdesk microservice rabbitmq&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager">
+}</component>
+  <component name="RunManager" selected="Spring Boot.TicketServiceApplication">
     <configuration name="TicketServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="ticket-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.helpdesk.ticketservice.TicketServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TicketStatusServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="ticket-status-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.helpdesk.ticketstatusservice.TicketStatusServiceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -54,6 +74,8 @@
       <option name="presentableId" value="Default" />
       <updated>1769537066010</updated>
       <workItem from="1769537067303" duration="30000" />
+      <workItem from="1770056410423" duration="23000" />
+      <workItem from="1770056444578" duration="16000" />
     </task>
     <servers />
   </component>

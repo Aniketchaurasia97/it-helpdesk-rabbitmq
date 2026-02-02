@@ -33,4 +33,9 @@ public class TicketStatusController {
             @PathVariable @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date) {
         return ticketStatusService.getStatusSummary(date);
     }
+    
+    @GetMapping("/getalltickets")
+    public List<StatusHistoryResponse> getAllTickets() {
+        return ticketStatusService.getAllTickets();
+    }
 }
