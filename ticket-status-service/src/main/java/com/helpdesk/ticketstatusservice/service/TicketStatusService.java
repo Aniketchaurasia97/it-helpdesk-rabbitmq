@@ -3,6 +3,8 @@ package com.helpdesk.ticketstatusservice.service;
 import com.helpdesk.ticketstatusservice.dto.StatusHistoryResponse;
 import com.helpdesk.ticketstatusservice.dto.StatusSummaryResponse;
 import com.helpdesk.ticketstatusservice.dto.StatusUpdateRequest;
+import com.helpdesk.ticketstatusservice.exception.InvalidInputException;
+import com.helpdesk.ticketstatusservice.exception.ResourceNotFoundException;
 import com.helpdesk.ticketstatusservice.model.TicketStatus;
 import com.helpdesk.ticketstatusservice.model.TicketStatusHistory;
 import com.helpdesk.ticketstatusservice.repository.TicketStatusHistoryRepository;
@@ -23,6 +25,17 @@ public class TicketStatusService {
     private final TicketStatusHistoryRepository statusHistoryRepository;
     
     public StatusHistoryResponse updateTicketStatus(StatusUpdateRequest request) {
+        // Validate input
+        if (request.getTicketId() == null || request.getTicketId() <= 0) {
+            throw new InvalidInputException("Ticket ID must be a positive number");
+        }
+        if (request.getUpdatedBy() == null || request.getUpdatedBy().trim().isEmpty()) {
+            throw new InvalidInputException("Updated by field cannot be empty");
+        }
+        if (request.getStatus() == null) {
+            throw new InvalidInputException("Status cannot be null");
+        }
+        
         TicketStatusHistory statusHistory = new TicketStatusHistory();
         statusHistory.setTicketId(request.getTicketId());
         statusHistory.setStatus(request.getStatus());
@@ -33,7 +46,15 @@ public class TicketStatusService {
     }
     
     public List<StatusHistoryResponse> getStatusHistory(Long ticketId) {
+        if (ticketId == null || ticketId <= 0) {
+            throw new InvalidInputException("Ticket ID must be a positive number");
+        }
+        
         List<TicketStatusHistory> history = statusHistoryRepository.findByTicketIdOrderByUpdatedAtDesc(ticketId);
+        if (history.isEmpty()) {
+            throw new ResourceNotFoundException("No status history found for ticket ID " + ticketId);
+        }
+        
         return history.stream()
                 .map(this::mapToResponse)
                 .collect(Collectors.toList());
@@ -61,8 +82,8 @@ public class TicketStatusService {
     }
     
     public List<StatusHistoryResponse> getAllTickets() {
-        List<TicketStatusHistory> allStatusHistory = statusHistoryRepository.findAll();
-        return allStatusHistory.stream()
+        List<TicketStatusHistory> latestStatusForAllTickets = statusHistoryRepository.findLatestStatusForAllTickets();
+        return latestStatusForAllTickets.stream()
                 .map(this::mapToResponse)
                 .collect(Collectors.toList());
     }
